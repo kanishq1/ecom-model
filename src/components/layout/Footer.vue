@@ -9,12 +9,14 @@ export default {
 }
 </script>
 <style scoped>
-.footer{
-   position: fixed;
+.footer{  
     bottom:0;
     left:0;
+    height:100px;
     background-color:black;
     color:white;
     width:100%;
+    margin-top:500px;
+    padding-top: 50px;
 }
 </style>

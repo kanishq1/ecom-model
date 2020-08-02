@@ -9,6 +9,10 @@ import Header from "../components/layout/Header";
 import Footer from "../components/layout/Footer";
 export default {
   name:"About",
+   data(){
+    return{
+    }
+  },
   components:{
     Header,
     Footer
