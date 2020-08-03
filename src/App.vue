@@ -5,7 +5,7 @@
       <div id="nav">
         <router-link to="/">Home</router-link>|
         <router-link to="/about">About</router-link>|
-        <router-link to="/books/desc/1">Desc</router-link>
+        <router-link to="/cart">Cart</router-link>
       </div>
     </div>
     <router-view />
@@ -21,7 +21,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 body {
   background-color: rgb(199, 197, 194);
 }

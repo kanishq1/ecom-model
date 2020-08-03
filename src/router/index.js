@@ -19,14 +19,19 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
   },
   {
-    path: '/books/desc/:id',
+    path: '/:type/desc/:id',
     name: 'Desc',
     component: () => import(/* webpackChunkName: "about" */ '../views/Desc.vue'),
   },
   {
-    path: '/accessories/desc/:id',
+    path: '/:type/desc/:id',
     name: 'Desc',
     component: () => import(/* webpackChunkName: "about" */ '../views/Desc.vue'),
+  },
+  {
+    path: '/cart',
+    name: 'Cart',
+    component: () => import(/* webpackChunkName: "about" */ '../views/Cart.vue'),
   },
 ];
 

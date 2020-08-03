@@ -2,20 +2,20 @@
   <div class="desc">
     <div class="container">
       <div class="heading-section">
-        <h2>Product Details</h2>
+        <h2>{{product.products[0].item}} Details</h2>
       </div>
       <div class="row">
         <div class="col-md-6"></div>
         <div class="col-md-6">
           <div class="product-dtl">
             <div class="product-info">
-              <div class="product-name">Variable Product</div>
+              <div class="product-name"></div>
               <div class="reviews-counter">
-                <span>3 Reviews</span>
+                <span>{{product.products[0].reviews}}</span>
               </div>
               <div class="product-price-discount">
-                <span>$39.00</span>
-                <span class="line-through">$29.00</span>
+                <span>{{product.products[0].discountPrice}}</span>
+                <span class="line-through">{{product.products[0].originalPrice}}</span>
               </div>
             </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
@@ -110,11 +110,17 @@
     </div>
   </div>
 </template>
+
 <script>
+import Product from "../product.json";
 export default {
   name: "Desc",
   data() {
-    return {};
+    return {
+      id: this.$route.params.id,
+      type: this.$route.params.type,
+      product: Product,
+    };
   },
   components: {},
 };
@@ -122,6 +128,9 @@ export default {
 <style>
 #nav {
   display: none !important;
+}
+.desc {
+  margin-top: 50px;
 }
 .pd-wrap {
   padding: 40px 0;
