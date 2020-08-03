@@ -1,20 +1,17 @@
 <template>
  <div>
-   <Header />
-   <Cards v-bind:products="products" />
-   <Stationary v-bind:stationaries="stationaries" />
+   <Cards v-bind:products="products" v-on:search-it="SearchResults" />
+   <Stationary v-bind:stationaries="stationaries" v-on:search-up="searchAcc" />
    <Footer />
  </div>  
 </template>
 <script>
-import Header from "./layout/Header";
 import Cards from "./Cards";
 import Stationary from "./Stationary";
 import Footer from "./layout/Footer";
 export default {
   name:"HelloWorld",
   components:{
-    Header,
     Footer,
     Cards,
     Stationary
@@ -25,22 +22,29 @@ export default {
         {
           id:1,
           item:"Harry Potter and The Sorceror's Stone",
-          rate:"300/-"
+          rate:"300/-",
+          img:"../assets/ecom.jpg"
         },
         {
           id:2,
           item:"Harry Potter and The Chamber Of Secrets",
-          rate:"300/-"
+          rate:"300/-",
+           img:"../assets/ecom.jpg"
+
         },
         {
           id:3,
           item:"Harry Potter and The Prisoner of Azkaban",
-          rate:"250/-"
+          rate:"250/-",
+          img:"../assets/ecom.jpg"
+
         },
         {
           id:4,
           item:"Harry Potter and The Goblet Of Fire",
-          rate:"200/-"
+          rate:"200/-",
+          img:"../assets/ecom.jpg"
+
         }
       
       ],
@@ -53,7 +57,7 @@ export default {
         {
           id:2,
           item:"Notebook",
-          rate:"45"
+          rate:"45/-"
         },
         {
           id:3,
@@ -66,6 +70,14 @@ export default {
           rate:"100/-"
         }
       ]
+    }
+  },
+  methods:{
+    SearchResults(searchResult){
+      this.products=this.products.filter(product=>product.id==searchResult);
+    },
+    searchAcc(acc){
+      this.stationaries=this.stationaries.filter(stationary=>stationary.id==acc);
     }
   }
   

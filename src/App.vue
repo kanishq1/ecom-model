@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Header />
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
@@ -8,15 +9,19 @@
   </div>
 </template>
 <script>
+import Header from "./components/layout/Header"
 export default {
   name:"App",
+  components:{
+    Header
+  }
  
 }
 </script>
 
 <style>
 body{
-  background-color: antiquewhite;
+  background-color: rgb(199, 197, 194);
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -27,10 +32,9 @@ body{
 }
 
 #nav {
-  padding: 30px;  
-  position:fixed;
-  bottom:300px;
-  top:700px;
+  padding-top: 100px; 
+  font-size: 1.6rem; 
+
 }
 
 #nav a {
