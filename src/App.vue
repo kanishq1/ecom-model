@@ -1,26 +1,28 @@
 <template>
-  <div id="app">
-    <Header />
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>  
-      <router-view/>  
+  <div>
+    <div id="app">
+      <Header />
+      <div id="nav">
+        <router-link to="/">Home</router-link>|
+        <router-link to="/about">About</router-link>|
+        <router-link to="/books/desc/1">Desc</router-link>
+      </div>
+    </div>
+    <router-view />
   </div>
 </template>
 <script>
-import Header from "./components/layout/Header"
+import Header from "./components/layout/Header";
 export default {
-  name:"App",
-  components:{
-    Header
-  }
- 
-}
+  name: "App",
+  components: {
+    Header,
+  },
+};
 </script>
 
 <style>
-body{
+body {
   background-color: rgb(199, 197, 194);
 }
 #app {
@@ -32,9 +34,8 @@ body{
 }
 
 #nav {
-  padding-top: 100px; 
-  font-size: 1.6rem; 
-
+  padding-top: 100px;
+  font-size: 1.6rem;
 }
 
 #nav a {
